@@ -16,3 +16,10 @@
 #        enable_lazy_load_no_trans: true
 #        format_sql: true
 #
+logging:
+  pattern:
+    dateformat: yyyy-MMM-dd HH:mm:ss.SSS
+  level:
+    root: INFO
+    org.hibernate: DEBUG
+    org.springframework.web: ERROR
