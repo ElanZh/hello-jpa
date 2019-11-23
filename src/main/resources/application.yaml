@@ -1,0 +1,18 @@
+#spring:
+#  main:
+#    allow-bean-definition-overriding: true
+#  datasource:
+#    url: jdbc:mysql://2haoji:3306/ift_basic?useSSL=false&allowPublicKeyRetrieval=true
+#    username: root
+#    password: admin
+#
+#  jpa:
+#    # ÇÐ»»InnoDBÒýÇæ
+#    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+#    hibernate:
+#      ddl-auto: update
+#    properties:
+#      hibernate:
+#        enable_lazy_load_no_trans: true
+#        format_sql: true
+#
