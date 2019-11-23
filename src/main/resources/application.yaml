@@ -1,25 +1,31 @@
-#spring:
-#  main:
-#    allow-bean-definition-overriding: true
-#  datasource:
-#    url: jdbc:mysql://2haoji:3306/ift_basic?useSSL=false&allowPublicKeyRetrieval=true
-#    username: root
-#    password: admin
-#
-#  jpa:
-#    # «–ªªInnoDB“˝«Ê
-#    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-#    hibernate:
-#      ddl-auto: update
-#    properties:
-#      hibernate:
-#        enable_lazy_load_no_trans: true
-#        format_sql: true
-#
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    url: jdbc:mysql://localhost:53306/hello_jpa?useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: admin
+
+  jpa:
+    # ÂàáÊç¢InnoDBÂºïÊìé
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+        format_sql: true
+
 logging:
   pattern:
     dateformat: yyyy-MMM-dd HH:mm:ss.SSS
   level:
-    root: INFO
-    org.hibernate: DEBUG
+    root: debug
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+    org.hibernate.type.descriptor.sql.BasicExtractor: debug
+    org.hibernate.SQL: debug
+    org.hibernate.engine.QueryParameters: debug
+    org.hibernate.engine.query.HQLQueryPlan: debug
     org.springframework.web: ERROR
+    org.apache: info
+    com.zaxxer.hikari: info
