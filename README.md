@@ -33,6 +33,13 @@ QueryDSL的方法使用在 ```QueryService中```
 使用QueryDSL需要先 mvn compile
 
 ---
+### SQL监控
+
+Hibernate打出的sql没法看，要设置各种trace/debug级别的日志，而且碰到枚举的入参就不会显示值
+
+因此，引入p6spy : [引入过程](./SQL监控.md)
+
+---
 
 ### 如果启动碰到了tomcat报错，用这个解决：[tomcat报错解决](./Tomcat报错.md)
 

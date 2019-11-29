@@ -2,7 +2,7 @@ spring:
   main:
     allow-bean-definition-overriding: true
   datasource:
-    url: jdbc:mysql://localhost:53306/hello_jpa?useSSL=false&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://localhost:3306/hello_jpa?useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: admin
 
@@ -15,17 +15,26 @@ spring:
       hibernate:
         enable_lazy_load_no_trans: true
         format_sql: true
+decorator:
+  datasource:
+    p6spy:
+      enable-logging: true
+      # log-file: p6spy.log
+      multiline: true
+      logging: slf4j
+      log-format: 执行SQL- 耗时 %(executionTime)ms | 类型 %(category) | connection%(connectionId) | %(sqlSingleLine);
 
 logging:
   pattern:
     dateformat: yyyy-MMM-dd HH:mm:ss.SSS
   level:
     root: debug
-    org.hibernate.type.descriptor.sql.BasicBinder: trace
-    org.hibernate.type.descriptor.sql.BasicExtractor: debug
-    org.hibernate.SQL: debug
-    org.hibernate.engine.QueryParameters: debug
-    org.hibernate.engine.query.HQLQueryPlan: debug
-    org.springframework.web: ERROR
+    org.hibernate: info
+#    org.hibernate.type.descriptor.sql.BasicBinder: trace
+#    org.hibernate.type.descriptor.sql.BasicExtractor: debug
+#    org.hibernate.SQL: debug
+#    org.hibernate.engine.QueryParameters: debug
+#    org.hibernate.engine.query.HQLQueryPlan: debug
+    org.springframework.web: error
     org.apache: info
     com.zaxxer.hikari: info

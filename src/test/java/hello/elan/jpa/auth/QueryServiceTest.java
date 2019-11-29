@@ -7,7 +7,7 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.Set;
+import java.util.List;
 
 @SpringBootTest
 public class QueryServiceTest extends AppTests {
@@ -20,13 +20,13 @@ public class QueryServiceTest extends AppTests {
 
     @Test
     public void findRolesByAccount() {
-        Set<Role> admin = queryService.findRolesByAccount("admin");
+        List<Role> admin = queryService.findRolesByAccount("admin");
         System.out.println(admin);
     }
 
     @Test
     public void findResourceByAccount(){
-        Set<Resource> admin = queryService.findResourceByAccount("admin");
+        List<Resource> admin = queryService.findResourceByAccount("admin");
         System.out.println(admin);
     }
 }
