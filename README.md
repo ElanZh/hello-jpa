@@ -1,7 +1,7 @@
 # JPA 使用示例
 
 ---
-
+```hello.elan.jpa.auth``` 包
 ## 使用JPA来实现经典的 账号(manager)-角色(role)-菜单(resource) 权限控制系统
 其中：
 * 账号-角色 多对多
@@ -13,6 +13,17 @@
 项目第一次启动时```InitRunner```会向三张表插入一堆有父子级的菜单，一个admin角色，一个admin账号
 
 其中 ```AuthService``` 使用 ```JpaSpecificationExecutor``` 执行各种复杂查询
+
+---
+```hello.elan.jpa.freight``` 包
+## 使用JPA 实现 城配货运三个实体的关联关系：
+运单(Waybill)-运单地址(WaybillAddress)-包裹(Wrap)
+
+* 一个运单对应多个地址
+
+* 每个地址有一组要卸车的包裹
+
+* 新增顺序为，新增包裹，把包裹分配给运单，同时将同一地点的包裹生成运单地址
 
 ---
 

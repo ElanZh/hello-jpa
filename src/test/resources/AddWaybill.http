@@ -1,0 +1,44 @@
+POST http://localhost:8080/freight/waybill/add
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "waybillNum": "2019-12-13-17-03",
+  "waybillAddressSet": [
+    {
+      "addressDetail": "闻喜路930弄",
+      "sort": 1,
+      "wrapSet": [
+        {
+          "id": 1,
+          "name": "汉堡",
+          "phone": "18539766019"
+        },
+        {
+          "id": 2,
+          "name": "可乐",
+          "phone": "18539766019"
+        }
+      ]
+    },
+    {
+      "addressDetail": "沪太路1111弄",
+      "sort": 2,
+      "wrapSet": [
+        {
+          "id": 3,
+          "name": "敌敌畏",
+          "phone": "18539766019"
+        },
+        {
+          "id": 4,
+          "name": "百草枯",
+          "phone": "18539766019"
+        }
+      ]
+    }
+  ]
+}
+
+###

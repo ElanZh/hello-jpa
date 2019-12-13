@@ -1,0 +1,25 @@
+POST http://localhost:8080/freight/wrap/add
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+[
+  {
+    "name": "汉堡",
+    "phone": "18539766019"
+  },
+  {
+    "name": "可乐",
+    "phone": "18539766019"
+  },
+  {
+    "name": "敌敌畏",
+    "phone": "18937662924"
+  },
+  {
+    "name": "百草枯",
+    "phone": "18937662924"
+  }
+]
+
+###
