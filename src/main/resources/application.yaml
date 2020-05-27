@@ -1,8 +1,10 @@
 spring:
+  application:
+    name: demo
   main:
     allow-bean-definition-overriding: true
   datasource:
-    url: jdbc:mysql://localhost:3306/hello_jpa?useSSL=false&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://1haoji:3306/hello_jpa?useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: admin
 
@@ -28,7 +30,7 @@ logging:
   pattern:
     dateformat: yyyy-MMM-dd HH:mm:ss.SSS
   level:
-    root: debug
+    root: info
     org.hibernate: info
 #    org.hibernate.type.descriptor.sql.BasicBinder: trace
 #    org.hibernate.type.descriptor.sql.BasicExtractor: debug
