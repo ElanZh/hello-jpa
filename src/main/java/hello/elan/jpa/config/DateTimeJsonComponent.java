@@ -26,7 +26,7 @@ import java.time.format.DateTimeFormatter;
 @Slf4j
 public class DateTimeJsonComponent {
     private static final String DATE_PATTERN = "yyyy-MM-dd";
-    private static final String TIME_PATTERN = "HH:mm:ss.SSS";
+    private static final String TIME_PATTERN = "HH:mm:ss";
     private static final String DATE_TIME_PATTERN = DATE_PATTERN + " " + TIME_PATTERN;
     private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern(DATE_PATTERN).withZone(ZoneId.of("Asia/Shanghai"));
     private static final DateTimeFormatter TIME_FORMATTER = DateTimeFormatter.ofPattern(TIME_PATTERN).withZone(ZoneId.of("Asia/Shanghai"));

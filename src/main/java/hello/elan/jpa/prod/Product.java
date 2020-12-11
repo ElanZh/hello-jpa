@@ -1,9 +1,13 @@
 package hello.elan.jpa.prod;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import javax.persistence.*;
+import java.time.LocalDateTime;
 
 /**
  * @author 张一然
@@ -13,6 +17,7 @@ import javax.persistence.Id;
 @lombok.Data
 @lombok.NoArgsConstructor
 @lombok.AllArgsConstructor
+@EntityListeners({AuditingEntityListener.class})
 public class Product {
     @Id
     @GeneratedValue(generator = "SQ_PRODUCT")
@@ -20,4 +25,19 @@ public class Product {
     private Integer id;
 
     private String name;
+
+    @CreatedDate
+    @Column(updatable = false)
+    private LocalDateTime createAt;
+    @LastModifiedDate
+    @Column(insertable = false)
+    private LocalDateTime updateAt;
+
+    @CreatedBy
+    @Column(updatable = false)
+    private Integer createBy;
+    @LastModifiedBy
+    @Column(insertable = false)
+    private Integer updateBy;
+
 }

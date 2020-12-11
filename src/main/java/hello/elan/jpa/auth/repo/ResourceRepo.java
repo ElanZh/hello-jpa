@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.Collection;
 import java.util.Set;
 
 public interface ResourceRepo extends JpaRepository<Resource, Integer>, JpaSpecificationExecutor<Resource> {
@@ -15,9 +16,9 @@ public interface ResourceRepo extends JpaRepository<Resource, Integer>, JpaSpeci
     @Query("select r from Resource r where r.name= 'root' and r.parent is null order by r.sort")
     Resource findRoot();
 
-    Set<Resource> findByRoles(Set<Role> roles);
+    Set<Resource> findByRolesIn(Collection<Role> roles);
 
-    Set<Resource> findAllByIdIn(Set<Integer> ids);
+    Set<Resource> findAllByIdIn(Collection<Integer> ids);
 
     @Query("select count(r) from Resource r " +
             "where r.parent = :#{#param.parent} and r.sort = :#{#param.sort}")

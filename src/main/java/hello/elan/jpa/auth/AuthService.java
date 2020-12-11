@@ -80,7 +80,7 @@ public class AuthService {
      */
     public Set<Resource> findResourceByAccount(String username) {
         Set<Role> roles = findRolesByAccount(username);
-        return resourceRepo.findByRoles(roles);
+        return resourceRepo.findByRolesIn(roles);
     }
 
     /**
